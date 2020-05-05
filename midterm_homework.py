@@ -36,9 +36,9 @@ Question4
 def check_url(internet_adress):
 	response = requests.get(internet_adress)
 	if response.status_code == 200:
-		print("Working!", internet_adress)
+		print("Working!", internet_adress, "PID: ", os.getpid())
 	else:
-		print("Not Working!", internet_adress)
+		print("Not Working!", internet_adress, "PID: ", os.getpid())
 
 
 thread1 = threading.Thread(target=check_url, args=("https://api.github.com", ))
